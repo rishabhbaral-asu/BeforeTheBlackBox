@@ -1,0 +1,16 @@
+{
+  "case_id": "test1",
+  "context": {
+    "flight_phase": "Cruise",
+    "altitude_ft": 35000,
+    "time": "Night",
+    "weather": "Convective weather nearby"
+  },
+  "messages": [
+    "AUTO FLT AP OFF",
+    "AUTO FLT A/THR OFF",
+    "F/CTL ALTN LAW",
+    "NAV ADR DISAGREE",
+    "STALL WARN"
+  ]
+}

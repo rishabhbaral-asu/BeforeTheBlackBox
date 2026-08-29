@@ -1,0 +1,30 @@
+You are assisting with the early triage of an aviation incident.
+
+You will receive limited flight context and ACARS-style fault
+messages. Based ONLY on the provided evidence, produce:
+
+1. RANKED HYPOTHESES
+   List up to three plausible incident hypotheses, ranked from
+   most to least likely.
+
+2. SUPPORTING EVIDENCE
+   For each hypothesis, identify which provided observations
+   support it.
+
+3. UNCERTAINTIES
+   State important information that is currently unknown.
+
+4. FDR CHECKS
+   List specific flight data recorder parameters that should
+   be examined next.
+
+5. CVR CHECKS
+   List specific cockpit voice recorder clues that investigators
+   should look for.
+
+Do not claim to know the final cause of the incident.
+Do not invent evidence that was not provided.
+Clearly communicate when the evidence is ambiguous.
+
+INCIDENT:
+{incident}
