@@ -11,17 +11,18 @@ def main():
     parser.add_argument("--input", required=True)
     args = parser.parse_args()
 
-    # Load configuration
+    print("Loading configuration...")
+
     with open("config/baseline.yaml", "r") as f:
         config = yaml.safe_load(f)
 
-    # Load incident
     input_path = Path(args.input)
+
+    print(f"Loading incident: {input_path}")
 
     with open(input_path, "r") as f:
         incident = json.load(f)
 
-    # Load fixed baseline prompt
     with open(config["prompt_file"], "r") as f:
         prompt_template = f.read()
 
@@ -30,11 +31,9 @@ def main():
         json.dumps(incident, indent=2)
     )
 
-    # ---------------------------------------------------------
-    # MINIMAL BASELINE:
-    # One local model call.
-    # No tools, RAG, memory, or iterative investigation.
-    # ---------------------------------------------------------
+    print(f"Model: {config['model']}")
+    print("Sending incident to local model...")
+    print("Waiting for response...\n")
 
     response = ollama.chat(
         model=config["model"],
@@ -48,15 +47,16 @@ def main():
             "temperature": config["temperature"],
             "num_ctx": config["num_ctx"]
         },
-        think=False
+        think = False
     )
 
     output = response["message"]["content"]
 
-    # Display output
+    print("=" * 60)
+    print("BASELINE OUTPUT")
+    print("=" * 60)
     print(output)
 
-    # Save output
     output_dir = Path("outputs")
     output_dir.mkdir(exist_ok=True)
 
