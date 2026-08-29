@@ -1,2 +1,4 @@
-ollama
+transformers
+torch
+accelerate
 PyYAML

@@ -1,4 +1,4 @@
-model: qwen3:4b
+model: Qwen/Qwen3-1.7B
 temperature: 0.0
-num_ctx: 4096
+max_new_tokens: 700
 prompt_file: prompts/baseline.txt
